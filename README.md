@@ -2,7 +2,7 @@
 
 Welcome to To-Do App, a simple and intuitive tool to help you create your list of tasks, manage them, and stay organized. 🚀
 
-<img src="./preview-to-do-app.png" alt="App Screenshot" width="450">
+<img src="./preview-todo-app.png" alt="App Screenshot" width="450">
 
 ## Table of Contents
 
