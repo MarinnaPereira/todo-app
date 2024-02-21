@@ -87,32 +87,23 @@ This will start the server side of the application.
 
 ### To-Do App relies on the following dependencies
 
-- [**React**](https://react.dev/)
-  JavaScript library for building user interfaces.
+- [**React**](https://react.dev/): JavaScript library for building user interfaces.
 
-- [**Vite**](https://vitejs.dev/)  
-  A fast and efficient development build tool for modern web projects.
+- [**Vite**](https://vitejs.dev/): A fast and efficient development build tool for modern web projects.
 
-- [**Tailwind CSS**](https://tailwindcss.com/)  
-  A utility-first CSS framework for rapidly building custom designs.
+- [**Tailwind CSS**](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
 
-- [**React Icons**](https://react-icons.github.io/react-icons/)  
-  A popular icon library made available as React components.
+- [**React Icons**](https://react-icons.github.io/react-icons/): A popular icon library made available as React components.
 
-- [**UUID**](https://www.npmjs.com/package/uuid)
-  A popular Node.js library for generating unique identifiers.
+- [**UUID**](https://www.npmjs.com/package/uuid): A popular Node.js library for generating unique identifiers.
 
-- [**TypeScript**](https://www.typescriptlang.org/)  
-  A superset of JavaScript that adds static typing to the language.
+- [**TypeScript**](https://www.typescriptlang.org/): A superset of JavaScript that adds static typing to the language.
 
-- [**Express.js**](https://expressjs.com/)  
-  Fast, unopinionated, minimalist web framework for Node.js.
+- [**Express.js**](https://expressjs.com/): Fast, unopinionated, minimalist web framework for Node.js.
 
-- [**Cors**](https://www.npmjs.com/package/cors)
-  Middleware for enabling Cross-Origin Resource Sharing (CORS) in Express.js.
+- [**Cors**](https://www.npmjs.com/package/cors): Middleware for enabling Cross-Origin Resource Sharing (CORS) in Express.js.
 
-- [**Morgan**](https://www.npmjs.com/package/morgan)
-  HTTP request logger middleware for Node.js.
+- [**Morgan**](https://www.npmjs.com/package/morgan): HTTP request logger middleware for Node.js.
 
 ## Contributing
 
