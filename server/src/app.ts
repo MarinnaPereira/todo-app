@@ -6,7 +6,16 @@ import { CustomError } from "./types/customErrorModel";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV === "dev"
+        ? "localhost:5173"
+        : "https://easy-todo-app.onrender.com",
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+  })
+);
+
 app.use(morgan("dev"));
 app.use(express.json());
 
