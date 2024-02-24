@@ -20,8 +20,6 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json());
 
-console.log(process.env.NODE_ENV);
-
 app.get("/", (req: Request, res: Response) => {
   res.send(`
     <div>
