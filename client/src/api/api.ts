@@ -1,7 +1,12 @@
 import { TodoModel } from "../types/todoModels";
 import { TodosResModel, TodoResModel } from "../types/resModel";
 
-let baseURL: string = "http://localhost:4000";
+const isLive: boolean = false;
+
+const baseURL: string = isLive
+  ? "https://easy-todo-app-server.onrender.com"
+  : "http://localhost:4000";
+// const baseURL: string = "http://localhost:4000";
 // const baseURL: string = "https://easy-todo-app-server.onrender.com";
 
 export const getTodos = async (): Promise<TodosResModel> => {
