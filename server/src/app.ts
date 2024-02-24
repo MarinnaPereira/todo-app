@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
+import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
 import { todosRouter } from "./routes/todosRouter";
@@ -10,7 +11,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "dev"
-        ? "localhost:5173"
+        ? "http://localhost:5173"
         : "https://easy-todo-app.onrender.com",
     methods: ["GET", "POST", "PATCH", "DELETE"],
   })
@@ -19,11 +20,22 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json());
 
+console.log(process.env.NODE_ENV);
+
 app.get("/", (req: Request, res: Response) => {
-  res.json({
-    message:
-      "Welcome to the ToDoApp server! 🚀\n\nYou can perform the following actions:\n- To retrieve all todos, send a GET request to /todos.\n- To add a new todo, send a POST request to /todos.\n- To delete a todo, send a DELETE request to /todos/:id, replacing :id with the todo's unique identifier.\n- To update a todo, send a PATCH request to /todos/:id, replacing :id with the todo's unique identifier.\n\nFeel free to explore and manage your todos! 📝",
-  });
+  res.send(`
+    <div>
+      <p>Welcome to the To-Do-App server! 🚀</p>
+      <p>You can perform the following actions:</p>
+      <ul>
+        <li>To retrieve all todos, send a GET request to '/todos'.</li>
+        <li>To add a new todo, send a POST request to '/todos'.</li>
+        <li>To delete a todo, send a DELETE request to '/todos/:id', replacing ':id' with the todo's unique identifier.</li>
+        <li>To update a todo, send a PATCH request to '/todos/:id', replacing ':id' with the todo's unique identifier.</li>
+      </ul>
+      <p>Feel free to explore and manage your todos! 📝</p>
+    </div>
+  `);
 });
 
 app.use("/todos", todosRouter);

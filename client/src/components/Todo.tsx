@@ -16,16 +16,26 @@ interface TodoProps {
 
 export const Todo = ({ task, deleteTask, checkTask, editTask }: TodoProps) => {
   const { text, isDone } = task;
-  const [isEditing, setEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const [updatedText, setUpdatedText] = useState(text);
 
   const handleEditToggle = () => {
-    setEditing(!isEditing);
-    if (!updatedText.trim()) {
-      alert("You should enter a to-do.");
-    }
-    if (isEditing) {
+    if (!isEditing) {
+      setIsEditing(true);
+    } else {
+      if (!updatedText.trim()) {
+        alert("You should enter a valid to-do.");
+        setUpdatedText(text);
+        return;
+      }
       editTask(task, updatedText);
+      setIsEditing(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleEditToggle();
     }
   };
 
@@ -37,12 +47,14 @@ export const Todo = ({ task, deleteTask, checkTask, editTask }: TodoProps) => {
             type="text"
             value={updatedText}
             onChange={(e) => setUpdatedText(e.target.value)}
+            onKeyDown={handleKeyDown}
             onBlur={handleEditToggle}
             autoFocus
             className="bg-violet-200 rounded-lg outline-none px-1 md:px-2 py-1 w-full text-sm text-center md:text-left"
           />
         ) : (
           <p
+            onClick={handleEditToggle}
             className={`w-full my-1 px-1 text-sm ${
               isDone ? "line-through text-violet-300" : ""
             }`}
